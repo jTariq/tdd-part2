@@ -8,7 +8,11 @@ public class TestCase {
 		this.methodName = methodName;
 	}
 	
+	public void setUp(){
+	}
+	
 	public void run() throws Exception{
+		this.setUp();
 		Method method = this.getClass().getMethod(this.methodName, null);
 		method.invoke(this);
 	}
