@@ -15,5 +15,9 @@ public class TestCase {
 		this.setUp();
 		Method method = this.getClass().getMethod(this.methodName, null);
 		method.invoke(this);
+		this.tearDown();
+	}
+
+	public void tearDown() {
 	}
 }

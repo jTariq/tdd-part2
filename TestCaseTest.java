@@ -1,21 +1,20 @@
 
 
 public class TestCaseTest {
-	public void testRunning() throws Exception {
-		WasRun test = new WasRun("testMethod");
-		test.run();
-		assert test.wasRun;
+	WasRun test;
+	public void setUp() throws Exception {
+		test = new WasRun("testMethod");
 	}
 	
-	public void testSetUp() throws Exception{
+	public void testTemplateMethod() throws Exception{
 		WasRun test = new WasRun("testMethod");
 		test.run();
-		assert test.wasSetUp;
+		assert test.log.equals("setUp testMethod tearDown ");
 	}
 	
 	public static void main(String args[]) throws Exception{	
-		new TestCaseTest().testRunning();
-		new TestCaseTest().testSetUp();
+		new TestCaseTest().setUp();
+		new TestCaseTest().testTemplateMethod();
 	}
 }
 	

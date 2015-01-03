@@ -4,9 +4,10 @@ import java.lang.reflect.Method;
 
 public class WasRun extends TestCase{
 
-	public boolean wasRun = false;
+	public boolean wasRun;
 	private TestCase testCase;
 	public boolean wasSetUp;
+	public String log;
 
 	public WasRun(String methodName) {
 		super(methodName);
@@ -14,11 +15,15 @@ public class WasRun extends TestCase{
 		this.wasSetUp = Boolean.TRUE;
 	}
 
-	public void testMethod(){
-		this.wasRun = true;
-	}
-	
 	public void setUp(){
+		this.wasRun = false;
 		this.wasSetUp = true;
+		this.log = "setUp ";
+	}
+	public void testMethod(){
+		this.log = this.log.concat("testMethod " );
+	}
+	public void tearDown(){
+		this.log = this.log.concat("tearDown " );
 	}
 }
