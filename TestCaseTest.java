@@ -25,11 +25,19 @@ public class TestCaseTest {
 		assert "1 run, 1 failed" == result.summary();
 	}
 	
+	public void testFailedResultFormatting(){
+		result = new TestResult();
+		result.testStarted();
+		result.testFailed();
+		assert "1 run, 1 failed" == result.summary();
+	}
+	
 	public static void main(String args[]) throws Exception{	
 		new TestCaseTest().setUp();
 		new TestCaseTest().testTemplateMethod();
-		new TestCaseTest().testResult();//Failing for now
-		new TestCaseTest().testFailedResult();////Failing for now
+		new TestCaseTest().testResult();
+		new TestCaseTest().testFailedResult();
+		new TestCaseTest().testFailedResultFormatting();
 	}
 }
 	
