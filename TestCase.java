@@ -12,8 +12,8 @@ public class TestCase {
 	public void setUp(){
 	}
 	
-	public TestResult run() throws Exception{
-		result = new TestResult();
+	public void run(TestResult result) throws Exception{
+		//result = new TestResult();
 		result.testStarted();
 		this.setUp();
 		try {
@@ -23,7 +23,6 @@ public class TestCase {
 			result.testFailed();
 		}
 		this.tearDown();
-		return result;
 	}
 
 	public void tearDown() {
