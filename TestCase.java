@@ -1,7 +1,7 @@
 import java.lang.reflect.Method;
 
 
-public class TestCase {
+public class TestCase implements Test{
 	private String methodName;
 	private TestResult result;
 
@@ -26,5 +26,10 @@ public class TestCase {
 	}
 
 	public void tearDown() {
+	}
+
+	@Override
+	public int countTestCases() {
+		return 1;
 	}
 }

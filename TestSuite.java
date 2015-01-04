@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class TestSuite {
+public class TestSuite implements Test{
 
 	private List<TestCase> tests;
 	
@@ -18,6 +18,11 @@ public class TestSuite {
 		for (TestCase test : tests) {
 			test.run(result);
 		}
+	}
+
+	@Override
+	public int countTestCases() {
+		return tests.size();
 	}
 
 }
